@@ -1,0 +1,255 @@
+/* ============================================================
+   WATCHVAULT DESIGN TOKENS — Three-Layer Architecture
+   Layer 1: Primitive  →  Layer 2: Semantic  →  Layer 3: Component
+   ============================================================ */
+
+/* ── LAYER 1: PRIMITIVE TOKENS ──────────────────────────── */
+:root {
+  /* Lime Green Scale (Brand Primary) */
+  --lime-50:  #F7FEE7;
+  --lime-100: #ECFCCB;
+  --lime-200: #D9F99D;
+  --lime-300: #BEF264;
+  --lime-400: #A3E635;
+  --lime-500: #84CC16;
+  --lime-600: #65A30D;
+  --lime-700: #4D7C0F;
+  --lime-800: #3F6212;
+  --lime-900: #365314;
+  --lime-950: #1A2E05;
+
+  /* Stone Scale (Neutral) */
+  --stone-50:  #FAFAF9;
+  --stone-100: #F5F5F4;
+  --stone-200: #E7E5E4;
+  --stone-300: #D6D3D1;
+  --stone-400: #A8A29E;
+  --stone-500: #78716C;
+  --stone-600: #57534E;
+  --stone-700: #44403C;
+  --stone-800: #292524;
+  --stone-900: #1C1917;
+  --stone-950: #0C0A09;
+
+  /* Status Colors */
+  --red-400:    #F87171;
+  --red-500:    #EF4444;
+  --red-600:    #DC2626;
+  --amber-400:  #FBBF24;
+  --amber-500:  #F59E0B;
+  --green-400:  #4ADE80;
+  --green-500:  #22C55E;
+  --blue-400:   #60A5FA;
+  --blue-500:   #3B82F6;
+  --yellow-400: #FACC15;
+
+  /* Pure */
+  --white: #FFFFFF;
+  --black: #000000;
+
+  /* ── Spacing Scale (4px base) */
+  --space-1:  0.25rem;   /* 4px */
+  --space-2:  0.5rem;    /* 8px */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.25rem;   /* 20px */
+  --space-6:  1.5rem;    /* 24px */
+  --space-8:  2rem;      /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+  --space-20: 5rem;      /* 80px */
+  --space-24: 6rem;      /* 96px */
+
+  /* ── Typography Scale */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-5xl:  3rem;
+
+  --weight-normal:   400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-extrabold: 800;
+
+  --leading-tight:   1.25;
+  --leading-snug:    1.375;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.625;
+
+  /* ── Border Radius */
+  --radius-sm:   0.25rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   0.75rem;
+  --radius-xl:   1rem;
+  --radius-2xl:  1.5rem;
+  --radius-full: 9999px;
+
+  /* ── Shadows */
+  --shadow-sm:  0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.15), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-glow: 0 0 20px rgb(132 204 22 / 0.3);
+
+  /* ── Motion */
+  --duration-fast:   150ms;
+  --duration-normal: 250ms;
+  --duration-slow:   400ms;
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:   cubic-bezier(0.4, 0, 1, 1);
+
+  /* ── Z-Index */
+  --z-base:     0;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+}
+
+/* ── LAYER 2: SEMANTIC TOKENS ─────────────────────────────── */
+:root {
+  /* Surface */
+  --color-bg:           var(--stone-50);
+  --color-bg-subtle:    var(--stone-100);
+  --color-bg-elevated:  var(--white);
+  --color-fg:           var(--stone-900);
+  --color-fg-muted:     var(--stone-500);
+  --color-fg-subtle:    var(--stone-400);
+
+  /* Brand */
+  --color-primary:         var(--lime-500);
+  --color-primary-hover:   var(--lime-600);
+  --color-primary-active:  var(--lime-700);
+  --color-primary-subtle:  var(--lime-50);
+  --color-primary-muted:   var(--lime-100);
+  --color-primary-fg:      var(--stone-900);
+
+  /* Border */
+  --color-border:        var(--stone-200);
+  --color-border-muted:  var(--stone-100);
+  --color-border-strong: var(--stone-300);
+
+  /* Status */
+  --color-success:  var(--green-500);
+  --color-warning:  var(--amber-500);
+  --color-error:    var(--red-500);
+  --color-info:     var(--blue-500);
+
+  /* Interactive */
+  --color-focus-ring: var(--lime-400);
+
+  /* Spacing semantic */
+  --spacing-xs:  var(--space-1);
+  --spacing-sm:  var(--space-2);
+  --spacing-md:  var(--space-4);
+  --spacing-lg:  var(--space-6);
+  --spacing-xl:  var(--space-8);
+  --spacing-2xl: var(--space-12);
+  --spacing-3xl: var(--space-16);
+
+  /* Typography semantic */
+  --font-sans: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-display: 'Inter', var(--font-sans);
+}
+
+/* ── LAYER 2: DARK MODE OVERRIDES ─────────────────────────── */
+.dark {
+  --color-bg:           var(--stone-900);
+  --color-bg-subtle:    var(--stone-800);
+  --color-bg-elevated:  var(--stone-800);
+  --color-fg:           var(--stone-50);
+  --color-fg-muted:     var(--stone-400);
+  --color-fg-subtle:    var(--stone-500);
+
+  --color-primary-subtle: rgb(132 204 22 / 0.1);
+  --color-primary-muted:  rgb(132 204 22 / 0.15);
+
+  --color-border:        var(--stone-700);
+  --color-border-muted:  var(--stone-800);
+  --color-border-strong: var(--stone-600);
+
+  --color-bg-elevated:  var(--stone-800);
+  --shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+}
+
+/* ── LAYER 3: COMPONENT TOKENS ────────────────────────────── */
+:root {
+  /* Nav */
+  --nav-bg:           var(--color-bg-elevated);
+  --nav-height:       64px;
+  --nav-border:       var(--color-border);
+  --nav-shadow:       var(--shadow-sm);
+  --nav-fg:           var(--color-fg);
+  --nav-fg-active:    var(--color-primary);
+  --nav-item-radius:  var(--radius-md);
+
+  /* Card */
+  --card-bg:          var(--color-bg-elevated);
+  --card-border:      var(--color-border);
+  --card-radius:      var(--radius-xl);
+  --card-shadow:      var(--shadow-sm);
+  --card-shadow-hover: var(--shadow-lg);
+  --card-padding:     var(--space-4);
+
+  /* Button primary */
+  --btn-primary-bg:       var(--color-primary);
+  --btn-primary-bg-hover: var(--color-primary-hover);
+  --btn-primary-fg:       var(--color-primary-fg);
+  --btn-primary-radius:   var(--radius-lg);
+  --btn-primary-padding:  var(--space-3) var(--space-6);
+
+  /* Button ghost */
+  --btn-ghost-bg:       transparent;
+  --btn-ghost-bg-hover: var(--color-bg-subtle);
+  --btn-ghost-fg:       var(--color-fg-muted);
+  --btn-ghost-fg-hover: var(--color-fg);
+
+  /* Input */
+  --input-bg:      var(--color-bg-elevated);
+  --input-border:  var(--color-border);
+  --input-radius:  var(--radius-lg);
+  --input-padding: var(--space-3) var(--space-4);
+  --input-focus:   var(--color-focus-ring);
+
+  /* Badge */
+  --badge-radius:  var(--radius-full);
+  --badge-padding: var(--space-1) var(--space-3);
+
+  /* Toast */
+  --toast-bg:      var(--color-bg-elevated);
+  --toast-border:  var(--color-border);
+  --toast-radius:  var(--radius-xl);
+  --toast-shadow:  var(--shadow-xl);
+
+  /* Skeleton */
+  --skeleton-base:     var(--color-bg-subtle);
+  --skeleton-shine:    var(--color-border-muted);
+  --skeleton-radius:   var(--radius-md);
+  --skeleton-duration: 1.5s;
+
+  /* Tier Rating Colors */
+  --tier-sss:   #FF6B6B;
+  --tier-splus: #FF8E53;
+  --tier-s:     #FFA726;
+  --tier-a:     var(--lime-500);
+  --tier-b:     var(--blue-400);
+  --tier-c:     #AB47BC;
+  --tier-d:     var(--stone-400);
+  --tier-e:     var(--stone-500);
+  --tier-f:     var(--stone-600);
+
+  /* Carousel */
+  --carousel-gap:    var(--space-4);
+  --carousel-scroll: smooth;
+}
